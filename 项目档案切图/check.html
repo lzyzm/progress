@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ZH-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+  <title>项目档案查询</title>
+</head>
+<body style="background-color: #fff">
+ <!-- 头部  -->
+ <div class="header_check">
+   <div class="sameWidth">
+     <div class="logo_check">
+       <h1>
+         <a href="login.html"></a>
+       </h1>
+     </div>
+   </div>
+ </div>
+ <!--banner开始-->
+  <div class="main-banner">
+      <img src="images/banner.jpg"/>
+  </div>
+ <!-- 内容 -->
+ 
+ <div class="checkInner animated fadeInRight" style="overflow-x:hidden">
+   <div class="sameWidth">
+     <div class="inner-title">
+        <h2>项目档案查询<span class="small-title">/Project file query</span></h2>
+      </div>
+     <div class="inner-content  clearfix">
+        <form action="" method="">                         
+        <span class='formInput'>
+          <label for="name">项目名称：</label>
+          <input type="text" placeholder="请输入项目名称" id="name" class="sameInput" />
+        </span>
+        <span class='formInput'>
+          <label for="ID" class="rightLabel">风险等级：</label>
+          <select name="state" class="deadline">
+            <option value="0" disabled="" selected=""></option>
+            <option value="1">低风险</option>
+            <option value="2">高风险</option>
+          </select>
+        </span>
+        <span class='formInput'>
+          <label for="">发行日期：</label>
+          <input type="text" class="arrivalDateL" onClick="WdatePicker()" />
+          <span class="zhi">至</span>
+          <input type="text" class="arrivalDateR" onClick="WdatePicker()" />
+        </span>
+         <span class='formInput'>
+          <label for="" class="rightLabel">兑付日期：</label>
+          <input type="text" class="arrivalDateL" onClick="WdatePicker()" />
+          <span class="zhi">至</span>
+          <input type="text" class="arrivalDateR" onClick="WdatePicker()" />
+        </span>
+        <span class='formInput'>
+          <label for="">项目兑付收益率：</label>
+          <input type="text" class="arrivalDateL noPng" />
+          <span class="zhi">至</span>
+          <input type="text" class="arrivalDateR noPng" />
+        </span>
+        <span class='formInput'>
+          <label for="ID" class="rightLabel">状态：</label>
+          <select name="state" class="deadline">
+            <option value="0" disabled="" selected=""></option>
+            <option value="1">结束</option>
+            <option value="2">结束</option>
+          </select>
+       </span>
+        <span class='formInput'>
+          <label for="name">基金管理人：</label>
+          <input type="text" placeholder="请输入基金管理人姓名" id="name" class="sameInput" />
+        </span>
+        <span class='formInput'>
+          <label for="" class="rightLabel">期限：</label>
+          <input type="text" class="arrivalDateL noPng" />
+          <span class="zhi">至</span>
+          <input type="text" class="arrivalDateR noPng" />
+        </span>
+ 
+        <span class="checkB"><input type="submit" value="查询" class="checkButton" /></span> 
+                   
+        </form>
+      </div>
+   </div>
+ </div>
+ <div class="footer">
+   <div class="footerContent">
+      <p class="footerTitle"><a href="login.html">数据中心项目档案管理系统</a></p>
+   </div>
+ </div>
+</body>
+<script language="javascript" type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+   $(function(){
+      var item = $(".listContent_inner li");
+      for(var i=0;i<item.length;i++){
+          if(i%2==0){
+              item[i].style.backgroundColor="#fff";
+          }
+      }
+
+  });
+
+</script>
+</html>

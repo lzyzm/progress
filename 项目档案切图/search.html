@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<title>导航</title>
+		<style>
+		.table-shang td{
+			opacity: 0;
+			}
+			.table-shang tbody td:nth-child(2){opacity: 1;background-color:#fff;border-left: 1px solid #e8e8e8}
+			.table-xia tbody td:nth-child(2){opacity: 0;}
+			#fixed-left tr:hover{
+				background-color:rgba(0,0,0,0.1)
+			}
+		</style>
+	</head>
+	<body>
+		<div class="S-top  animated fadeInRightBig" style="position:fixed;top:0px;left:0px;z-index:100;background-color:#e5e5e5">
+			<span class="serchInput">
+				<label for="">发行日期：</label>
+				<input type="text" class="s-input" onclick="WdatePicker()" />
+				<span class="zhi">至</span>
+				<input type="text" class="s-input" onclick="WdatePicker()" />
+			</span>
+			<span class="serchInput">
+				<label for="setl">所属分公司：</label>
+				<select name="" id="setl">
+					<option value="北京一分">北京一分</option>
+					<option value="北京二分">北京二分</option>
+					<option value="北京三分">北京三分</option>
+					<option value="北京四分">北京四分</option>
+				</select>
+			</span>
+			<span class="serchInput">
+				<label for="shuru">项目名称：</label>
+				<input type="text" id="shuru">
+			</span>
+			<span class="check-tb">
+				<label for="tk">退款</label>
+				<input type="checkbox" id="tk" name="check">
+				<label for="bg">变更</label>
+				<input type="checkbox" id="bg" name="check">
+			</span>
+			<span class="serchInput">
+				<button class="s-btn">搜索</button>
+			</span>
+			<span class="ser-xian">
+				人数：<b>5</b>人&nbsp;&nbsp;&nbsp;投资金额：<b>2000</b>万
+			</span>
+		</div>
+		<!--固定头部-->
+		<div class="search-main table-responsive  animated fadeInRightBig" style="position:fixed;top:80px;left:0px;z-index:100;" id="fixed-head">
+			
+			<table class="table table-hover search-table" >
+				<thead>
+					<tr>
+						<th>客户姓名</th>
+						<th>性别</th>
+						<th>项目名称</th>
+						<th>投资金额</th>
+						<th>到账日期</th>
+						<th>合同到期日</th>
+						<th>业绩比较基准</th>
+						<th>佣金系数</th>
+						<th>业绩系数</th>
+						<th>所属分公司</th>
+						<th>投资顾问</th>
+						<th>投资经理</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+						<th>投资总监</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr style="opacity:0;">
+						<td>王小六</td>
+						<td>男</td>
+						<td>222222</td>
+						<td>1000万</td>
+						<td>17/02/03</td>
+						<td>17/02/03</td>
+						<td>****</td>
+						<td>10%</td>
+						<td>10%</td>
+						<td>北京二分</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>王小六</td>
+						<td>1111111</td>
+						<td>11111</td>
+						<td>王小六</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<div class="container-fluid animated fadeInRightBig" style="position:fixed;top:81px;left:0px;padding:0px;z-index:99" id="fixed-left">
+			<div class="search-main table-responsive">
+				<table class="table search-table table-shang">
+					<thead>
+						<tr style="opacity:0;">
+							<th>身份证地址</th>
+							<th>项目名称</th>
+							<th>家庭住址</th>
+							<th>投资金额</th>
+							<th>到账日期</th>
+							<th>合同到期日</th>
+							<th>业绩比较基准</th>
+							<th>佣金系数</th>
+							<th>业绩系数</th>
+							<th>所属分公司</th>
+							<th>投资顾问</th>
+							<th>投资经理</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>河北深的打发打发第三方是打发是打发第三方</td>
+							<td>男</td>
+							<td>222222</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>11111</td>
+							<td>111111</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>河北深的</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>11111</td>
+							<td>111111</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>河北深</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>11111</td>
+							<td>111111</td>
+							<td>王小六</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--表格内容部分-->
+		<div class="container-fluid animated fadeInRightBig" style="position:absolute;top:80px;left:0px;padding:0px;z-index:10">
+			<div class="search-main table-responsive">
+				<table class="table table-bordered search-table  table-xia">
+					<thead>
+						<tr style="opacity:0;">
+							<th>身份证地址</th>
+							<th>项目名称</th>
+							<th>家庭住址</th>
+							<th>投资金额</th>
+							<th>到账日期</th>
+							<th>合同到期日</th>
+							<th>业绩比较基准</th>
+							<th>佣金系数</th>
+							<th>业绩系数</th>
+							<th>所属分公司</th>
+							<th>投资顾问</th>
+							<th>投资经理</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+							<th>投资总监</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>河北深的打发打发第三方是打发是打发第三方</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>11111</td>
+							<td>111111</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						<tr>
+							<td>王小六</td>
+							<td>男</td>
+							<td>复华二期</td>
+							<td>1000万</td>
+							<td>17/02/03</td>
+							<td>17/02/03</td>
+							<td>****</td>
+							<td>10%</td>
+							<td>10%</td>
+							<td>北京二分</td>
+							<td>王小六</td>
+							<td>王小六</td>
+							<td>王小六</td>
+						</tr>
+						
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/My97DatePicker/WdatePicker.js"></script>
+		<script>
+			$(window).on("scroll",function(){
+				var new_left=(-$(window).scrollLeft())+"px"
+				var new_top=(-$(window).scrollTop()+81)+"px"
+				$("#fixed-head").css("left",new_left)
+				if($(window).scrollLeft()>100){
+					$("#fixed-left").css("left","-100px");
+					$(".table-shang tbody td:nth-child(2)").css("background-color","#f0f0f0")
+				}else{
+					$("#fixed-left").css("left",new_left)
+					$(".table-shang tbody td:nth-child(2)").css("background-color","#fff")
+				}
+				$("#fixed-left").css("top",new_top)
+			})
+			$("#fixed-left tr").hover(function(){
+				$(this).find("td").eq(1).css("background-color","#e8e8e8")
+			},function(){
+				$(this).find("td").eq(1).css("background-color","#fff")
+			})
+			
+		</script>
+	</body>
+</html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<title>导航</title>
+	</head>
+	<body>
+		<div class="container-fluid top-bar">
+			<div class="row">
+				<div class="col-sm-12 side-top">
+					<div class="side-top-left pull-left">
+						<a href=""></a>
+					</div>
+					<div class="side-top-right pull-right">
+						<div class="admin">欢迎你，<span>Jack</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="wrapper">
+			<nav class="navbar-default nav-static-side" role="navigation">
+				<div style="height:100%;overflow:hidden" id="iscroll">
+					<ul class="nav" id="side-menu">
+						<li>
+							<a href="javascript:void(0)" class="xiala">
+								<i class="side-tu side-page1"></i>
+								<span class="sp">项目管理</span>
+								<span class="xia-btn pull-right"></span>
+							</a>
+							<ul class="nav nav-xiabar out">
+								<li>
+									<a href="javascript:void(0)" class="xiala2">
+										<span>项目录入</span>
+										<span class="xia-btn pull-right"></span>
+									</a>
+									<ul class="nav out" id="nav-select">
+										<li><a class="J_slect" href="list.html">基金类</a></li>
+										<li><a class="J_slect" href="list.html">地产项目类</a></li>
+										<li><a class="J_slect" href="list.html">商业权益类</a></li>
+									</ul>
+								</li>
+								<li><a class="J_iframe" href="list.html">项目查询</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="xiala">
+								<i class="side-tu side-page2"></i>
+								<span class="sp">合同管理</span>
+								<span class="xia-btn pull-right"></span>
+							</a>
+							<ul class="nav nav-xiabar out">
+								<li><a class="J_iframe" href="result.html">合同录入</a></li>
+								<li><a class="J_iframe" href="">合同查询</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="xiala">
+								<i class="side-tu side-page3"></i>
+								<span class="sp">审核管理</span>
+								<span class="xia-btn pull-right"></span>
+							</a>
+							<ul class="nav nav-xiabar out" >
+								<li><a class="J_iframe" href="">分公司财务</a></li>
+								<li><a class="J_iframe" href="">总公司客服</a></li>
+								<li><a class="J_iframe" href="">总公司财务</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="xiala">
+								<i class="side-tu side-page4"></i>
+								<span class="sp">信息查询</span>
+								<span class="xia-btn pull-right"></span>
+							</a>
+							<ul class="nav nav-xiabar out">
+								<li><a class="J_iframe" href="flow.html">项目</a></li>
+								<li><a class="J_iframe" href="">合同</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div id="page-wrapper" class="row">
+<!--				<div class="bar-line">首页 &gt;<span>合同管理</span> &gt;<span class="font-active">合同录入</span></div>-->
+				<iframe width="100%" height="100%" id="J_iframe" src="search.html" frameborder="0" style="overflow-x:hidden;"></iframe>
+			</div>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.slimscroll.min.js"></script>
+		<script>
+			$("#iscroll").slimScroll({
+				height: '100%'
+			});
+			/*左侧导航*/
+			$(".xiala").on("click",function(){
+				var attr=$(this).siblings("ul").attr("class")
+				if(attr.indexOf("in")==-1){
+					$("#side-menu>li").children("ul").attr("class","nav nav-xiabar out")
+					$("#side-menu>li>a").children(".xia-btn").css("background","url(images/you.png) center no-repeat")
+					$(this).find(".xia-btn").css("background-size","14px 8px")
+					$(this).siblings("ul").attr("class","nav nav-xiabar in")
+					$(this).find(".xia-btn").css("background","url(images/xia.png) center no-repeat")
+					$(this).find(".xia-btn").css("background-size","14px 8px")
+				}else{
+					$(this).siblings("ul").attr("class","nav nav-xiabar out")
+					$(this).find(".xia-btn").css("background","url(images/you.png) center no-repeat")
+					$(this).find(".xia-btn").css("background-size","8px 14px")
+				}
+			})
+			
+			$(".xiala2").on("click",function(){
+				var attr=$(this).siblings("ul").attr("class")
+				if(attr.indexOf("in")==-1){
+					$(this).siblings("ul").attr("class","nav in")
+					$(this).find(".xia-btn").css("background","url(images/xia.png) center no-repeat")
+					$(this).find(".xia-btn").css("background-size","14px 8px")
+				}else{
+					$(this).siblings("ul").attr("class","nav out")
+					$(this).find(".xia-btn").css("background","url(images/you.png) center no-repeat")
+					$(this).find(".xia-btn").css("background-size","8px 14px")
+				}
+			})
+			
+			
+			/*页面切换*/
+			$(".J_iframe").on("click",function(){
+				var url=$(this).attr("href")
+				$("#J_iframe").attr("src",url);
+				return false;
+			})
+			$(".J_slect").on("click",function(){
+				var url=$(this).attr("href")
+				$("#J_iframe").attr("src",url);
+				return false;
+			})
+		</script>
+	</body>
+</html>

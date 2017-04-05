@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>项目档案信息</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="images/favicon.ico"/>
+</head>
+<body>
+  <!-- 头部 -->
+   <div class="header">
+     <div class="sameWidth listWidth">
+       <div class="logo">
+         <h1>
+           <a href="login.html"></a>
+         </h1>
+       </div>
+       <div class="username">
+         欢迎您，王琦！
+       </div>
+     </div>
+   </div>
+   <!-- 主体开始 -->
+   <div class="listContent">
+     <div class="sameWidth">
+       <div class="contentTop">
+         <h3 class="listTitle">全部项目档案</h3>
+       </div>
+       <div class="infoContent">
+       <!-- 投资人基本信息 -->
+         <table cellpadding="0" cellspacing="0" class="printform">
+            <tr class="form-title"><td colspan="4">项目基本信息</td></tr> 
+            <tr class="form-content">
+              <th>产品名称：</th>
+              <td colspan="4">瀚亚国商掘金1号银行类特殊资产投资基金（二期）   </td>
+            </tr>
+            <tr class="form-content">
+              <th>产品编号：</th>
+              <td>HY201606002 </td>
+              <th>发布日期：</th>
+              <td>2016年6月8日 </td>
+            </tr> 
+            <tr class="form-content">
+              <th>总认缴额：</th>
+              <td>2亿</td>
+              <th>项目认缴额：</th>
+              <td>100万元起，以5万元递增</td>
+            </tr> 
+            <tr class="form-content">
+              <th>成立日期：</th>
+              <td></td>
+              <th>结束日期：</th>
+              <td></td>
+            </tr>
+             
+            <tr class="form-content">
+              <th>期限：</th>
+              <td>18个月 </td>
+              <th>募集期：</th>
+              <td>2016年6月8日-7月7日 </td>
+            </tr> 
+            <tr  class="form-content">
+              <th>基金管理人：</th>
+              <td>国商融通（北京）投资基金管理有限公司</td>
+              <th>基金托管人：</th>
+              <td></td>
+            </tr> 
+           <tr class="form-content" style="height:20px;"></tr>
+            <tr class="form-content">
+              <th>认缴账户：</th>
+              <td></td>
+              <th>产品认购费：</th>
+              <td></td>
+            </tr>
+            <tr class="form-content">
+              <th>项目状态：</th>
+              <td>已结束</td>
+              <th>产品风险等级：</th>
+              <td></td>
+            </tr>            
+          </table>
+          <!-- 付息情况 -->
+          <table cellpadding="0" cellspacing="0" class="printform">
+            <tr class="form-content">
+              <th>付息方式：</th>
+              <td> </td>
+              <th>预期付息日期：</th>
+              <td> </td>
+            </tr>            
+          </table>
+          <!-- 项目收益分配 -->
+          <table cellpadding="0" cellspacing="0" class="printform">
+            <tr class="form-title"><td colspan="4">项目收益分配</td></tr> 
+            <tr class="form-content">
+              <th rowspan='4'>年化收益率：</th>
+              <td class="changeW">年化收益率区间</td>
+              <td class="changeW">投资者收益分配</td>
+              <td class="nextW">投资者收益分配分配比例</td>
+            </tr>   
+            <tr class="form-content">
+              <td class="changeW">R≤10%</td>
+              <td class="changeW">100%</td>
+              <td class="nextW">R*100%</td>
+            </tr>  
+            <tr class="form-content">
+              <td class="changeW">10%＜R≤50%</td>
+              <td class="changeW">90%</td>
+              <td class="nextW">10%+（R-10%）*80%</td>
+            </tr>  
+            <tr class="form-content">
+              <td class="changeW">R≥50%</td>
+              <td class="changeW">8%</td>
+              <td class="nextW">10%+（50%-10%）*80%+（R-50%）*70%</td>
+            </tr>            
+          </table>
+          <!-- 募集情况 -->
+          <div class="chart">
+            <div class="chart_top">
+              <ul class="tab">
+                <li class="active">全部募集情况</li>
+                <li>分类募集情况</li>
+              </ul>
+            </div>
+            <div class="chart_bottom">
+              <div class="checkDate">
+                <span class="checkTime">查询时间：</span>
+                <span class="Num">募集人数：<span>11</span>人</span>
+              </div>
+              <!-- 全部募集情况 -->
+              <div class="chart_inner">
+                <div class="chartContent" id="container" style="width: 1150px; min-height: 330px"></div>
+              </div>
+              <!-- 分类募集情况 -->
+              <div class="chart_inner" style="display: none">
+                <div class="chartContent" id="containerfenlei" style="width: 1150px; min-height: 330px"></div>
+              </div>  
+            </div>
+          </div>
+       </div>
+     </div>
+   </div>
+</body>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/highcharts.js" type="text/javascript"></script>
+<script src="js/exporting.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function () { 
+ // 获取当前日期
+   function show(){
+   var mydate = new Date();
+   var str = "" + mydate.getFullYear() + "年";
+   str += (mydate.getMonth()+1) + "月";
+   str += mydate.getDate() + "日";
+   return str;
+  }
+  $('.checkTime').html('查询时间：'+show())
+
+
+
+
+  // 点击切换效果
+  $('.tab li').click(function(){
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.chart_inner').eq($(this).index()).show().siblings('.chart_inner').hide();
+  })
+
+  // 图表语言设置
+  Highcharts.setOptions({
+      lang:{
+         contextButtonTitle:"图表导出菜单",
+         decimalPoint:".",
+         downloadJPEG:"下载JPEG图片",
+         downloadPDF:"下载PDF文件",
+         downloadPNG:"下载PNG文件",
+         downloadSVG:"下载SVG文件",
+         loading:"加载中",
+         printChart:"打印图表",
+      }
+  }); 
+
+
+  // 全部募集情况
+    $('#container').highcharts({
+
+
+        chart: {
+            type: 'bar',
+            events: {
+                load: function () {
+                    var label = this.renderer.label('加载中', 500, 120)
+                    .attr({
+                        fill: Highcharts.getOptions().colors[0],
+                        padding: 10,
+                        r: 5,
+                        zIndex: 8
+                    })
+                    .css({
+                        color: '#FFFFFF'
+                    })
+                    .add();
+                    setTimeout(function () {
+                        label.fadeOut();
+                    }, 1000);
+                }
+            }
+        },
+        title: {
+            text: '全部募集情况'
+        },
+        xAxis: {
+            categories: ['实际募集金额', '总募集额度'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' 元'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -20,
+            y: 35,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        colors: ['#ce1c00'], 
+        series: [{
+            name: '合计',
+            data: [50000000, 200000000]
+        }]
+    });
+   
+   // 分类募集情况
+   $('#containerfenlei').highcharts({
+        chart: {
+            type: 'bar',
+            events: {
+                load: function () {
+                    var label = this.renderer.label('加载中', 500, 120)
+                    .attr({
+                        fill: Highcharts.getOptions().colors[0],
+                        padding: 10,
+                        r: 5,
+                        zIndex: 8
+                    })
+                    .css({
+                        color: '#FFFFFF'
+                    })
+                    .add();
+                    setTimeout(function () {
+                        label.fadeOut();
+                    }, 1000);
+                }
+            }
+        },
+        title: {
+            text: '分类募集情况'
+        },
+        xAxis: {
+            categories: ['分类募集情况'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: '',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' 元'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -20,
+            y: 35,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'A类',
+            data: [50000000]
+        }, {
+            name: 'B类',
+            data: [500000000]
+        }, {
+            name: 'C类',
+            data: [10000000]
+        }
+
+        ]
+    });
+
+});
+		</script>
+</html>
